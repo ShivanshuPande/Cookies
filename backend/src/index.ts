@@ -2,7 +2,7 @@ import express from "express" ;
 import jwt, { JwtPayload } from "jsonwebtoken";
 import cookieParser  from "cookie-parser";
 import cors from 'cors';
-
+const port = 3000;
 const app = express();
 const JWT_SECRET = "jwt1234";
 app.use(express.json());
@@ -43,3 +43,7 @@ app.post("/logout" ,(req,res )=>{
 
     res.send("congratulation , you have been successfully logged outz")
 })
+
+app.listen(port , ()=>{
+    console.log(`the server is running on ${port}` )
+});
